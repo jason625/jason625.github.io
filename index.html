@@ -1,12 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>로아 할일 체크</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    test
+    <table class="t1">
+        <thead>
+            <th>쿠크세이튼 리허설</th>
+            <th>아브렐슈드 데자뷰</th>
+            <th>도전어비스</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="checkbox" id="t1-todo_0"/><label for="t1-todo_0"></label></td>
+                <td><input type="checkbox" id="t1-todo_1"/><label for="t1-todo_1"></label></td>
+                <td><input type="checkbox" id="t1-todo_2"/><label for="t1-todo_2"></label></td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="t2">
+        <colgroup>
+            <col width="20%" />
+            <col width="10%" style="background-color: #6d7f9b;"/>
+            <col width="10%" style="background-color: #6d7f9b;"/>
+            <col width="10%" style="background-color: #6d7f9b;"/>
+            <col width="10%" style="background-color: #aa8878;"/>
+            <col width="10%" style="background-color: #aa8878;"/>
+            <col width="10%" style="background-color: #aa8878;"/>
+            <col width="10%" style="background-color: #aa8878;"/>
+            <col width="10%" style="background-color: #aa8878;"/>
+            <col width="5%"/>
+        </colgroup>
+        <thead>
+            <tr>
+                <th>캐릭명</th>
+                <th>카던</th>
+                <th>가디언</th>
+                <th>에포나</th>
+                <th>아르고스</th>
+                <th>발탄</th>
+                <th>비아키스</th>
+                <th>도전/시련 가디언</th>
+                <th>오레하</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- <tr>
+                <td onclick="changeName(this)">테스트테스트테스트테스트</td>
+                <td><input type="checkbox" id="c1-todo_1"/><label for="c1-todo_1"></label></td>
+                <td><input type="checkbox" id="c1-todo_2"/><label for="c1-todo_2"></label></td>
+                <td><input type="checkbox" id="c1-todo_3"/><label for="c1-todo_3"></label></td>
+                <td><input type="checkbox" id="c1-todo_4"/><label for="c1-todo_4"></label></td>
+                <td><input type="checkbox" id="c1-todo_5"/><label for="c1-todo_5"></label></td>
+                <td><input type="checkbox" id="c1-todo_6"/><label for="c1-todo_6"></label></td>
+                <td><input type="checkbox" id="c1-todo_7"/><label for="c1-todo_7"></label></td>
+                <td><input type="checkbox" id="c1-todo_8"/><label for="c1-todo_8"></label></td>
+                <td onclick="del(this)">x</td>
+            </tr> -->
+        </tbody>
+    </table>
+    <button class="addBtn" onclick="add()">+</button>
+
+    <script src="index.js"></script>
 </body>
 </html>
