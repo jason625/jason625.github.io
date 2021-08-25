@@ -1,7 +1,7 @@
 function changeName(e) {
     const name = prompt('새로운 캐릭명을 입력하세요.');
     e.innerText = name;
-    syncSession();
+    syncStorage();
 }
 
 function add() {
@@ -31,21 +31,21 @@ function add() {
 
     newTr.querySelectorAll('input').forEach(el => {
         el.addEventListener('change', function () { 
-            syncSession();
+            syncStorage();
         });
     })
 
-    syncSession();
+    syncStorage();
 }
 
 function del(e) {
     const tr = e.parentElement;
     tr.parentElement.removeChild(tr);
-    syncSession();
+    syncStorage();
 }
 
-function syncSession() {
-    const sessionForm = {
+function syncStorage() {
+    const storageForm = {
         t1: {
             todo0 : false,
             todo1 : false,
@@ -56,7 +56,7 @@ function syncSession() {
 
     const t1_checkList = document.querySelectorAll('.t1 input');
     t1_checkList.forEach((el, idx) => {
-        sessionForm.t1[`todo${idx}`] = el.checked;
+        storageForm.t1[`todo${idx}`] = el.checked;
     });
 
     const t2_row = document.querySelectorAll('.t2 tbody tr');
@@ -71,15 +71,15 @@ function syncSession() {
                 }
             }  
         })
-        sessionForm.t2.push(todoForm);
+        storageForm.t2.push(todoForm);
     })
-    window.sessionStorage.setItem("todo", JSON.stringify(sessionForm));
+    window.localStorage.setItem("todo", JSON.stringify(storageForm));
 }
 
 //
 (function () {
 
-    const sessionForm = {
+    const storageForm = {
         t1: {
             todo1 : false,
             todo2 : false,
@@ -100,8 +100,8 @@ function syncSession() {
         ]
     };
 
-    if (window.sessionStorage.getItem("todo")) {
-        const data = JSON.parse(window.sessionStorage.getItem("todo"));
+    if (window.localStorage.getItem("todo")) {
+        const data = JSON.parse(window.localStorage.getItem("todo"));
         //동기화
         if (data) {
             const t1_checkList = document.querySelectorAll('.t1 input');
@@ -109,33 +109,51 @@ function syncSession() {
                 el.checked = data.t1[`todo${idx}`];
             });
             if (data.t2.length > 0) {
-                const t2_row = document.querySelectorAll('.t2 tbody tr');
-                t2_row.forEach((el1, jdx) => {
-                    el1.querySelectorAll('td').forEach((el2, idx) => {
-                        if (idx === 0) {
-                            el2.innerText = data.t2[jdx].name;
-                        } else {
-                            if (el2.querySelector('input')) {
-                                el2.querySelector('input').checked = data.t2[jdx][`todo${idx}`];
-                            }
-                        }  
-                    })
-                })
+                // const t2_row = document.querySelectorAll('.t2 tbody tr');
+                // t2_row.forEach((el1, jdx) => {
+                //     el1.querySelectorAll('td').forEach((el2, idx) => {
+                //         if (idx === 0) {
+                //             el2.innerText = data.t2[jdx].name;
+                //         } else {
+                //             if (el2.querySelector('input')) {
+                //                 el2.querySelector('input').checked = data.t2[jdx][`todo${idx}`];
+                //             }
+                //         }  
+                //     })
+                // })
+                const target = document.querySelector('.t2 tbody');
+                data.t2.forEach((el, idx) => {
+                    const newTr = document.createElement('tr');
+                    newTr.innerHTML = `<tr>
+                    <td onclick="changeName(this)">${el.name}</td>
+                        <td><input type="checkbox" id="c${idx}-todo_1" ${el.todo1 ? 'checked' : '' }/><label for="c${idx}-todo_1"></label></td>
+                        <td><input type="checkbox" id="c${idx}-todo_2" ${el.todo1 ? 'checked' : '' }/><label for="c${idx}-todo_2"></label></td>
+                        <td><input type="checkbox" id="c${idx}-todo_3" ${el.todo3 ? 'checked' : '' }/><label for="c${idx}-todo_3"></label></td>
+                        <td><input type="checkbox" id="c${idx}-todo_4" ${el.todo4 ? 'checked' : '' }/><label for="c${idx}-todo_4"></label></td>
+                        <td><input type="checkbox" id="c${idx}-todo_5" ${el.todo5 ? 'checked' : '' }/><label for="c${idx}-todo_5"></label></td>
+                        <td><input type="checkbox" id="c${idx}-todo_6" ${el.todo1 ? 'checked' : '' }/><label for="c${idx}-todo_6"></label></td>
+                        <td><input type="checkbox" id="c${idx}-todo_7" ${el.todo1 ? 'checked' : '' }/><label for="c${idx}-todo_7"></label></td>
+                        <td><input type="checkbox" id="c${idx}-todo_8" ${el.todo1 ? 'checked' : '' }/><label for="c${idx}-todo_8"></label></td>
+                        <td onclick="del(this)">x</td>
+                    </tr>`;
+    
+                    target.appendChild(newTr);
+                }) 
             }
         }
 
     } else {
-        window.sessionStorage.setItem("todo", JSON.stringify(sessionForm));
+        window.localStorage.setItem("todo", JSON.stringify(storageForm));
     }
 
     document.querySelectorAll('.t1 tr input').forEach(el => {
         el.addEventListener('change', function () { 
-            syncSession();
+            syncStorage();
         });
     })
     document.querySelectorAll('.t2 tbody input').forEach(el => {
         el.addEventListener('change', function () { 
-            syncSession();
+            syncStorage();
         });
     })
 })()
