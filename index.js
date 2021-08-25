@@ -127,13 +127,13 @@ function syncStorage() {
                     newTr.innerHTML = `<tr>
                     <td onclick="changeName(this)">${el.name}</td>
                         <td><input type="checkbox" id="c${idx}-todo_1" ${el.todo1 ? 'checked' : '' }/><label for="c${idx}-todo_1"></label></td>
-                        <td><input type="checkbox" id="c${idx}-todo_2" ${el.todo1 ? 'checked' : '' }/><label for="c${idx}-todo_2"></label></td>
+                        <td><input type="checkbox" id="c${idx}-todo_2" ${el.todo2 ? 'checked' : '' }/><label for="c${idx}-todo_2"></label></td>
                         <td><input type="checkbox" id="c${idx}-todo_3" ${el.todo3 ? 'checked' : '' }/><label for="c${idx}-todo_3"></label></td>
                         <td><input type="checkbox" id="c${idx}-todo_4" ${el.todo4 ? 'checked' : '' }/><label for="c${idx}-todo_4"></label></td>
                         <td><input type="checkbox" id="c${idx}-todo_5" ${el.todo5 ? 'checked' : '' }/><label for="c${idx}-todo_5"></label></td>
-                        <td><input type="checkbox" id="c${idx}-todo_6" ${el.todo1 ? 'checked' : '' }/><label for="c${idx}-todo_6"></label></td>
-                        <td><input type="checkbox" id="c${idx}-todo_7" ${el.todo1 ? 'checked' : '' }/><label for="c${idx}-todo_7"></label></td>
-                        <td><input type="checkbox" id="c${idx}-todo_8" ${el.todo1 ? 'checked' : '' }/><label for="c${idx}-todo_8"></label></td>
+                        <td><input type="checkbox" id="c${idx}-todo_6" ${el.todo6 ? 'checked' : '' }/><label for="c${idx}-todo_6"></label></td>
+                        <td><input type="checkbox" id="c${idx}-todo_7" ${el.todo7 ? 'checked' : '' }/><label for="c${idx}-todo_7"></label></td>
+                        <td><input type="checkbox" id="c${idx}-todo_8" ${el.todo8 ? 'checked' : '' }/><label for="c${idx}-todo_8"></label></td>
                         <td onclick="del(this)">x</td>
                     </tr>`;
     
