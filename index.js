@@ -1,29 +1,30 @@
 function changeName(e) {
     const name = prompt('새로운 캐릭명을 입력하세요.');
-    e.innerText = name;
+    const lv = prompt('새로운 레벨을 입력하세요.');
+    e.innerText = lv.trim() + ' : ' + name.trim();
     syncStorage();
 }
 
 function add() {
     const target = document.querySelector('.t2 tbody');
     const name = prompt('캐릭명 or 직업명 or 편한이름');
+    const lv = prompt('레벨을 입력하세요.');
     const cnt = target.querySelectorAll('tr').length;
 
-    if (!name) {
+    if (!name || !lv) {
         return;
     }
-
     const newTr = document.createElement('tr');
     newTr.innerHTML = `<tr>
-    <td onclick="changeName(this)">${name}</td>
+    <td onclick="changeName(this)">${lv + ' : ' + name}</td>
         <td><input type="checkbox" id="c${cnt}-todo_1"/><label for="c${cnt}-todo_1"></label></td>
         <td><input type="checkbox" id="c${cnt}-todo_2"/><label for="c${cnt}-todo_2"></label></td>
         <td><input type="checkbox" id="c${cnt}-todo_3"/><label for="c${cnt}-todo_3"></label></td>
-        <td><input type="checkbox" id="c${cnt}-todo_4"/><label for="c${cnt}-todo_4"></label></td>
+        <td class="${(parseInt(lv)) > 1400 ? "high" : ""}"><input type="checkbox" id="c${cnt}-todo_4"/><label for="c${cnt}-todo_4"></label></td>
         <td><input type="checkbox" id="c${cnt}-todo_5"/><label for="c${cnt}-todo_5"></label></td>
         <td><input type="checkbox" id="c${cnt}-todo_6"/><label for="c${cnt}-todo_6"></label></td>
         <td><input type="checkbox" id="c${cnt}-todo_7"/><label for="c${cnt}-todo_7"></label></td>
-        <td><input type="checkbox" id="c${cnt}-todo_8"/><label for="c${cnt}-todo_8"></label></td>
+        <td><input type="checkbox" id="c${cnt}-todo_8" ${(parseInt(lv)) > 1415 ? "disabled" : ""}/><label for="c${cnt}-todo_8"></label></td>
         <td onclick="del(this)">x</td>
     </tr>`;
 
@@ -64,7 +65,8 @@ function syncStorage() {
         let todoForm = {};
         el1.querySelectorAll('td').forEach((el2, idx) => {
             if (idx === 0) {
-                todoForm.name = el2.innerText;
+                todoForm.lv = el2.innerText.split(" : ")[0];
+                todoForm.name = el2.innerText.split(" : ")[1];
             } else {
                 if (el2.querySelector('input')) {
                     todoForm[`todo${idx}`] = el2.querySelector('input').checked;
@@ -125,15 +127,15 @@ function syncStorage() {
                 data.t2.forEach((el, idx) => {
                     const newTr = document.createElement('tr');
                     newTr.innerHTML = `<tr>
-                    <td onclick="changeName(this)">${el.name}</td>
+                    <td onclick="changeName(this)">${el.lv + ' : ' + el.name}</td>
                         <td><input type="checkbox" id="c${idx}-todo_1" ${el.todo1 ? 'checked' : '' }/><label for="c${idx}-todo_1"></label></td>
                         <td><input type="checkbox" id="c${idx}-todo_2" ${el.todo2 ? 'checked' : '' }/><label for="c${idx}-todo_2"></label></td>
                         <td><input type="checkbox" id="c${idx}-todo_3" ${el.todo3 ? 'checked' : '' }/><label for="c${idx}-todo_3"></label></td>
-                        <td><input type="checkbox" id="c${idx}-todo_4" ${el.todo4 ? 'checked' : '' }/><label for="c${idx}-todo_4"></label></td>
+                        <td class="${(parseInt(el.lv)) > 1475 ? 'high' : ''}"><input type="checkbox" id="c${idx}-todo_4" ${el.todo4 ? 'checked' : '' }/><label for="c${idx}-todo_4"></label></td>
                         <td><input type="checkbox" id="c${idx}-todo_5" ${el.todo5 ? 'checked' : '' }/><label for="c${idx}-todo_5"></label></td>
                         <td><input type="checkbox" id="c${idx}-todo_6" ${el.todo6 ? 'checked' : '' }/><label for="c${idx}-todo_6"></label></td>
                         <td><input type="checkbox" id="c${idx}-todo_7" ${el.todo7 ? 'checked' : '' }/><label for="c${idx}-todo_7"></label></td>
-                        <td><input type="checkbox" id="c${idx}-todo_8" ${el.todo8 ? 'checked' : '' }/><label for="c${idx}-todo_8"></label></td>
+                        <td><input type="checkbox" id="c${idx}-todo_8" ${el.todo8 ? 'checked' : '' } ${(parseInt(el.lv)) > 1415 ? "disabled" : ""}/><label for="c${idx}-todo_8"></label></td>
                         <td onclick="del(this)">x</td>
                     </tr>`;
     
