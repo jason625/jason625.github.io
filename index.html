@@ -67,6 +67,58 @@
     </table>
     <button class="addBtn" onclick="add()">+</button>
 
+    <br>
+    
+    <table class="timeTable">
+        <colgroup>
+            <col width="10%">
+            <col width="70%">
+            <col width="20%">
+        </colgroup>
+        <thead>
+            <tr>
+                <th colspan="3">게이밍 벙커 레이드 현황</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="checkbox" class="timeTable-input" /></td>
+                <td>비아 하드</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" class="timeTable-input" /></td>
+                <td>비아 노말</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" class="timeTable-input" /></td>
+                <td>발탄 하드</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" class="timeTable-input" /></td>
+                <td>발탄 노말</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" class="timeTable-input" /></td>
+                <td>아르 고스</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" class="timeTable-input" /></td>
+                <td>아르 고스</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
     <script src="index.js"></script>
+    <script>
+        const checkedRaid = [0, 1, 1, 0, 1, 1];
+        document.querySelectorAll('.timeTable-input').forEach((el, idx) => {
+            el.checked = checkedRaid[idx];
+        })
+    </script>
 </body>
 </html>

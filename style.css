@@ -133,3 +133,16 @@ table th, table td {
 .t2 tbody tr td:first-child:hover {
     color: #9099ff;
 }
+
+.timeTable {
+    text-align: center;
+}
+.timeTable thead {
+    height: 35px;
+    background-color: #404249;
+    line-height: 35px;
+}
+.timeTable tbody tr {
+    height: 30px;
+    line-height: 30px;
+}
