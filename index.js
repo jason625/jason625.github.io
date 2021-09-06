@@ -20,7 +20,7 @@ function add() {
         <td><input type="checkbox" id="c${cnt}-todo_1"/><label for="c${cnt}-todo_1"></label></td>
         <td><input type="checkbox" id="c${cnt}-todo_2"/><label for="c${cnt}-todo_2"></label></td>
         <td><input type="checkbox" id="c${cnt}-todo_3"/><label for="c${cnt}-todo_3"></label></td>
-        <td class="${(parseInt(lv)) > 1400 ? "high" : ""}"><input type="checkbox" id="c${cnt}-todo_4"/><label for="c${cnt}-todo_4"></label></td>
+        <td class="${(parseInt(lv)) > 1475 ? "high" : ""}"><input type="checkbox" id="c${cnt}-todo_4"/><label for="c${cnt}-todo_4"></label></td>
         <td><input type="checkbox" id="c${cnt}-todo_5"/><label for="c${cnt}-todo_5"></label></td>
         <td><input type="checkbox" id="c${cnt}-todo_6"/><label for="c${cnt}-todo_6"></label></td>
         <td><input type="checkbox" id="c${cnt}-todo_7"/><label for="c${cnt}-todo_7"></label></td>
