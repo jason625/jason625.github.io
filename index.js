@@ -43,6 +43,7 @@ function del(e) {
     const tr = e.parentElement;
     tr.parentElement.removeChild(tr);
     syncStorage();
+    location.reload();
 }
 
 function syncStorage() {
