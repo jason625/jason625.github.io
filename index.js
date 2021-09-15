@@ -161,3 +161,14 @@ function syncStorage() {
     })
 })()
 
+function toolbar(type) {
+    if (type === "uncheckedAll") {
+        document.querySelectorAll('.t1 input[type="checkbox"]').forEach(el => el.checked = false);
+        document.querySelectorAll('.t2 input[type="checkbox"]').forEach(el => el.checked = false);
+    } else if (type === "uncheckedDay") {
+        document.querySelectorAll('.t2 input[id*="todo_1"]').forEach(el => el.checked = false);
+        document.querySelectorAll('.t2 input[id*="todo_2"]').forEach(el => el.checked = false);
+        document.querySelectorAll('.t2 input[id*="todo_3"]').forEach(el => el.checked = false);
+    }
+    syncStorage();
+}

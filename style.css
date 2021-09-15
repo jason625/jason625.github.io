@@ -4,7 +4,7 @@ html {
 }
 table {
     width: 80%;
-    margin: 50px auto;
+    margin: 20px auto 50px;
     color: #fff;
 }
 table th, table td {
@@ -145,4 +145,9 @@ table th, table td {
 .timeTable tbody tr {
     height: 30px;
     line-height: 30px;
+}
+
+.toolbar {
+    width: 80%;
+    margin: 0px auto;
 }
