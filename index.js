@@ -139,7 +139,7 @@ function syncStorage() {
                         <td><input type="checkbox" id="c${idx}-todo_6" ${el.todo6 ? 'checked' : '' }/><label for="c${idx}-todo_6"></label></td>
                         <td class="${ parseInt(el.lv) < 1475 ? 'high' : ''}"><input type="checkbox" id="c${idx}-todo_7" ${el.todo7 ? 'checked' : '' }/><label for="c${idx}-todo_7"></label></td>
                         <td class="${ parseInt(el.lv) < 1490 ? 'high' : ''}"><input type="checkbox" id="c${idx}-todo_8" ${el.todo8 ? 'checked' : '' }/><label for="c${idx}-todo_8"></label></td>
-                        <td"><input type="checkbox" id="c${idx}-todo_9" ${el.todo9 ? 'checked' : '' }/><label for="c${idx}-todo_9"></label></td>
+                        <td><input type="checkbox" id="c${idx}-todo_9" ${el.todo9 ? 'checked' : '' }/><label for="c${idx}-todo_9"></label></td>
                         <td class="${ parseInt(el.lv) >= 1415 ? 'high' : ''}"><input type="checkbox" id="c${idx}-todo_10" ${el.todo10 ? 'checked' : '' }/><label for="c${idx}-todo_10"></label></td>
                         <td onclick="del(this)">x</td>
                     </tr>`;
