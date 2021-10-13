@@ -20,11 +20,13 @@ function add() {
         <td><input type="checkbox" id="c${cnt}-todo_1"/><label for="c${cnt}-todo_1"></label></td>
         <td><input type="checkbox" id="c${cnt}-todo_2"/><label for="c${cnt}-todo_2"></label></td>
         <td><input type="checkbox" id="c${cnt}-todo_3"/><label for="c${cnt}-todo_3"></label></td>
-        <td class="${(parseInt(lv)) > 1475 ? "high" : ""}"><input type="checkbox" id="c${cnt}-todo_4"/><label for="c${cnt}-todo_4"></label></td>
+        <td><input type="checkbox" id="c${cnt}-todo_4"/><label for="c${cnt}-todo_4"></label></td>
         <td><input type="checkbox" id="c${cnt}-todo_5"/><label for="c${cnt}-todo_5"></label></td>
         <td><input type="checkbox" id="c${cnt}-todo_6"/><label for="c${cnt}-todo_6"></label></td>
         <td><input type="checkbox" id="c${cnt}-todo_7"/><label for="c${cnt}-todo_7"></label></td>
-        <td><input type="checkbox" id="c${cnt}-todo_8" ${(parseInt(lv)) > 1415 ? "disabled" : ""}/><label for="c${cnt}-todo_8"></label></td>
+        <td><input type="checkbox" id="c${cnt}-todo_8"/><label for="c${cnt}-todo_8"></label></td>
+        <td><input type="checkbox" id="c${cnt}-todo_9"/><label for="c${cnt}-todo_9"></label></td>
+        <td><input type="checkbox" id="c${cnt}-todo_10"/><label for="c${cnt}-todo_10"></label></td>
         <td onclick="del(this)">x</td>
     </tr>`;
 
@@ -132,11 +134,13 @@ function syncStorage() {
                         <td><input type="checkbox" id="c${idx}-todo_1" ${el.todo1 ? 'checked' : '' }/><label for="c${idx}-todo_1"></label></td>
                         <td><input type="checkbox" id="c${idx}-todo_2" ${el.todo2 ? 'checked' : '' }/><label for="c${idx}-todo_2"></label></td>
                         <td><input type="checkbox" id="c${idx}-todo_3" ${el.todo3 ? 'checked' : '' }/><label for="c${idx}-todo_3"></label></td>
-                        <td class="${(parseInt(el.lv)) > 1475 ? 'high' : ''}"><input type="checkbox" id="c${idx}-todo_4" ${el.todo4 ? 'checked' : '' }/><label for="c${idx}-todo_4"></label></td>
+                        <td><input type="checkbox" id="c${idx}-todo_4" ${el.todo4 ? 'checked' : '' }/><label for="c${idx}-todo_4"></label></td>
                         <td><input type="checkbox" id="c${idx}-todo_5" ${el.todo5 ? 'checked' : '' }/><label for="c${idx}-todo_5"></label></td>
                         <td><input type="checkbox" id="c${idx}-todo_6" ${el.todo6 ? 'checked' : '' }/><label for="c${idx}-todo_6"></label></td>
                         <td><input type="checkbox" id="c${idx}-todo_7" ${el.todo7 ? 'checked' : '' }/><label for="c${idx}-todo_7"></label></td>
-                        <td><input type="checkbox" id="c${idx}-todo_8" ${el.todo8 ? 'checked' : '' } ${(parseInt(el.lv)) > 1415 ? "disabled" : ""}/><label for="c${idx}-todo_8"></label></td>
+                        <td><input type="checkbox" id="c${idx}-todo_8" ${el.todo8 ? 'checked' : '' }/><label for="c${idx}-todo_8"></label></td>
+                        <td><input type="checkbox" id="c${idx}-todo_9" ${el.todo9 ? 'checked' : '' }/><label for="c${idx}-todo_9"></label></td>
+                        <td><input type="checkbox" id="c${idx}-todo_10" ${el.todo10 ? 'checked' : '' }/><label for="c${idx}-todo_10"></label></td>
                         <td onclick="del(this)">x</td>
                     </tr>`;
     
