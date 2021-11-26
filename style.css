@@ -151,3 +151,15 @@ table th, table td {
     width: 80%;
     margin: 0px auto;
 }
+
+.goSheet {
+    color: #fff;
+    width: 80%;
+    margin: 0 auto;
+    display: block;
+    border: 1px solid #fff;
+    text-align: center;
+    padding: 20px 0px;
+    background-color: #83648d;
+    text-decoration: none;
+}
